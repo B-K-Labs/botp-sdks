@@ -1,5 +1,5 @@
 // Import the BOTP SDK
-const BOTPSDK = require('./sdk-node.js');
+const BOTPSDK = require('./sdk.js');
 
 // Replace 'YOUR_API_KEY' with your actual API key
 const botpSDK = new BOTPSDK('YOUR_API_KEY');

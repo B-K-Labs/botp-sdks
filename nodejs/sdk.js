@@ -3,7 +3,7 @@ const axios = require('axios');
 class BOTPSDK {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.baseURL = 'https://api.blockey.co/api/v1/';
+    this.baseURL = 'https://api.blockey.co/api/v1';
   }
 
   async sendMessage(userAddresses, messages, notifyMessages) {
@@ -15,6 +15,10 @@ class BOTPSDK {
           message: messages[index],
           notifyMessage: notifyMessages[index]
         }))
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
       return response.data;
     } catch (error) {
@@ -34,6 +38,10 @@ class BOTPSDK {
         period,
         digits,
         algorithm
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
       return response.data;
     } catch (error) {
